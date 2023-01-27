@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+	// Unary
+	rpc SayHello (HelloRequest) returns (HelloReply);
+
+	// Server Streaming
+	rpc ParrotSaysHello (HelloRequest) returns (stream HelloReply);
+	
+	// Client Streaming
+	rpc ChattyClientSaysHello (stream HelloRequest) returns (DelayedReply);
+
+	// Both Streaming
+	rpc InteractingHello (stream HelloRequest) returns (stream HelloReply);
+
+	// client asks to join to sponsor
+	rpc JoinHello (Hello_join_Request) returns (HelloReply);
+
+	// sponsor asks XCA for validation
+	rpc CertHello (Hello_cert_Request) returns (HelloReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+	string name = 1;
+	string greeting = 2;
+  }
+
+// The new member's request to join message containing the user's name, public key.
+message Hello_join_Request {
+  string name = 1;
+  string greeting = 2;
+  bytes pub_key = 3;
+  // string pub_key = 3;
+}
+
+// The certification request message from sponsor containing the client's publik key.
+message Hello_cert_Request {
+	string name = 1;
+	string greeting = 2;
+	bytes pub_key = 3;
+	// string pub_key = 3;
+  }
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+
+message DelayedReply {
+	string message = 1;
+	repeated HelloRequest request = 2;
+}
