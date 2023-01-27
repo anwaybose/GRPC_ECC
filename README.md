@@ -3,6 +3,7 @@
 
 Install pycryptodome. 
 `pip install pycryptodome`
+`pip install tinyec`
 
 Install grpcio-tools. 
 `pip3 install grpcio-tools`
