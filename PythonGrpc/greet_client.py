@@ -6,7 +6,7 @@ import grpc
 import hashlib, secrets, binascii
 import pickle
 
-from python_crypto.utils import Crypto_Node as cn
+from python_crypto.utils import Crypto_Node
 
 def get_client_stream_requests():
     while True:
@@ -88,4 +88,5 @@ def run():
             print(hello_reply)
 
 if __name__ == "__main__":
+    cn = Crypto_Node()
     run()
