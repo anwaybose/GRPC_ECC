@@ -10,7 +10,7 @@ import pickle
 
 from Crypto.PublicKey import RSA
 
-from python_crypto.utils import Crypto_Node as cn
+from python_crypto.utils import Crypto_Node
 
 class GreeterServicer(greet_pb2_grpc.GreeterServicer):
     def SayHello(self, request, context):
@@ -89,4 +89,5 @@ def serve():
     server.wait_for_termination()
 
 if __name__ == "__main__":
+    cn = Crypto_Node()
     serve()
