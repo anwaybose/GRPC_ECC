@@ -2,10 +2,10 @@
 
 
 Install pycryptodome
-'pip install pycryptodome'
+`pip install pycryptodome`
 
 Install grpcio-tools
-'pip3 install grpcio-tools'
+`pip3 install grpcio-tools`
 
-'cd GRPC_ECC'
+`cd GRPC_ECC`
 
