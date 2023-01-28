@@ -32,8 +32,9 @@ message HelloRequest {
 // The new member's request to join message containing the user's name, public key.
 message Hello_join_Request {
   string name = 1;
-  string greeting = 2;
+  bytes message = 2;
   bytes pub_key = 3;
+  bytes priv_key = 4;
   // string pub_key = 3;
 }
 

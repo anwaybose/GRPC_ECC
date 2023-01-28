@@ -77,7 +77,7 @@ def run():
                 print("InteractingHello Response Received: ")
                 print(response)
         elif rpc_call == "5":
-            hello_request = greet_pb2.Hello_join_Request(greeting = enc_msg.decode(), name = rpc_encrypt, pub_key = d_key, priv_key = d_priv)
+            hello_request = greet_pb2.Hello_join_Request(message = enc_msg, name = rpc_encrypt, pub_key = d_key, priv_key = d_priv)
             hello_reply = stub.JoinHello(hello_request)
             print("SayHello Response Received:")
             print(hello_reply)

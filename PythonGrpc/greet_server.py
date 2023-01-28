@@ -53,19 +53,21 @@ class GreeterServicer(greet_pb2_grpc.GreeterServicer):
 
     def JoinHello(self, request, context):
         print("SayHello Request Made:")
-        print(request)
+        #print(request)
         hello_reply = greet_pb2.HelloReply()
         # packet = f"{request.greeting} {request.name} {request.pub_key}"
         if request.name == "A":
             d_key = request.pub_key # bytes(request.pub_key, 'utf-8')
             pubKey = pickle.loads(d_key)
             privKey = pickle.loads(request.Priv_key)
-            msg = bytes(request.greeting, 'utf-8')
+            #msg = bytes(request.greeting, 'utf-8')
+            msg = request.message
             decryptedMsg = cn.decrypt_ECC(msg, privKey)
             Msg = decryptedMsg.decode('utf-8')
         elif request.name == "B":
             keypair = RSA.importKey(request.Priv_key)
-            msg = bytes(request.greeting, 'utf-8')
+            #msg = bytes(request.greeting, 'utf-8')
+            msg = request.message
             decryptedMsg = cn.decrypt_RSA(msg, keypair)
             Msg = decryptedMsg.decode('utf-8')
 
