@@ -2,8 +2,8 @@
 
 
 Install pycryptodome. 
-`pip install pycryptodome`
-`pip install tinyec`
+`pip3 install pycryptodome`
+`pip3 install tinyec`
 
 Install grpcio-tools. 
 `pip3 install grpcio-tools`
@@ -13,5 +13,5 @@ Install grpcio-tools.
 
 Install the crypto package. 
 `cd ../Crypto`
-`pip install .`
+`pip3 install .`
 
