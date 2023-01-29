@@ -1,5 +1,9 @@
 # GRPC_ECC
 
+Git clone the package
+```
+git clone https://github.com/anwaybose/GRPC_ECC.git
+```
 
 Install pycryptodome. 
 ```
